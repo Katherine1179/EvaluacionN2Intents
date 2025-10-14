@@ -11,6 +11,8 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class HomeActivity extends AppCompatActivity {
 
+    //Intent explicito para navvegacion por fragments
+
     private ViewPager2 viewPager; // Contenedor de fragments con swipe horizontal
     private TabLayout tabLayout; // Pestañas para navegar entre fragments
 
