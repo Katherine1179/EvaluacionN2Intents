@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnWifi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abrir configuraciones Wi-Fi"/>
+
+    <Button
+        android:id="@+id/btnSMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar SMS"/>
+
+    <Button
+        android:id="@+id/btnLinterna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prender linterna"/>
+
+    <Button
+        android:id="@+id/btnContactos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver contactos"/>
+
+    <Button
+        android:id="@+id/btnCamaraFunciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Camara"/>
+
+    <Button
+        android:id="@+id/btnGaleria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar imagen galeria"/>
+
+    <ImageView
+        android:id="@+id/imgSeleccionada"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:background="#DDD"
+        android:contentDescription="Imagen seleccionada"
+        android:layout_marginTop="16dp"/>
+
+
+
+</LinearLayout>
