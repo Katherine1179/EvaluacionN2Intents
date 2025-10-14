@@ -118,6 +118,7 @@ public class EvaluacionFragment extends Fragment {
             Toast.makeText(getContext(), "No se puede acceder a la cámara", Toast.LENGTH_SHORT).show();
         }
 
+        //Intent implicito Configuracion Wi-Fi
         // Abrir ajustes Wi-Fi
         btnWifi.setOnClickListener(v -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)));
 
