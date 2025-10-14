@@ -161,6 +161,7 @@ public class EvaluacionFragment extends Fragment {
         });
 
 
+        // Intent implicito flash: Permisos y llama a alternarLuz()
         // Activar/desactivar linterna
         btnLinterna.setOnClickListener(v -> {
             if (camaraID == null) {
