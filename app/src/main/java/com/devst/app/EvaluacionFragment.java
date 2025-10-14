@@ -159,6 +159,7 @@ public class EvaluacionFragment extends Fragment {
                     }).show();
         });
 
+
         // Activar/desactivar linterna
         btnLinterna.setOnClickListener(v -> {
             if (camaraID == null) {
@@ -170,6 +171,7 @@ public class EvaluacionFragment extends Fragment {
             else permisoCamaraLauncher.launch(Manifest.permission.CAMERA);
         });
 
+        //Intent Explicito: Elegir camara frontal o trasera
         // Abrir cámara frontal o trasera
         btnCamaraFunciones.setOnClickListener(v -> {
             String[] opciones = {"Cámara Frontal", "Cámara Trasera"};
