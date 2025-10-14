@@ -50,6 +50,7 @@ public class EvaluacionFragment extends Fragment {
             });
 
     // Lanzador para seleccionar imagen desde galería
+    //Intent implicito: Seleccionar imagen desde galeria para mostrarla en un imageView
     private final ActivityResultLauncher<Intent> seleccionarImagenLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == getActivity().RESULT_OK && result.getData() != null) {
