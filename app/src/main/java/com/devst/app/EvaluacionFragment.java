@@ -187,6 +187,7 @@ public class EvaluacionFragment extends Fragment {
                             view.animate().alpha(0.5f).setDuration(200).withEndAction(() -> {
                                 if (getContext() != null) {
                                     requireActivity().startActivity(intentFinal);
+                                    //Intent explicito: Transicion entre activities
                                     requireActivity().overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
                                 }
                                 // Restaurar alpha al volver
