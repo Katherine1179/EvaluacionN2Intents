@@ -201,6 +201,7 @@ public class EvaluacionFragment extends Fragment {
 
 
 
+        //Intent implicito: Lista de contactos
         // Abrir aplicación de contactos
         btnAbrirContactos.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI)));
 
