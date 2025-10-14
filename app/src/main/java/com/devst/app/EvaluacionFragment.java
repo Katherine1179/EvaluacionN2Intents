@@ -129,6 +129,7 @@ public class EvaluacionFragment extends Fragment {
             seleccionarImagenLauncher.launch(Intent.createChooser(intent, "Selecciona una imagen"));
         });
 
+        //Intent implicito Enviar SMS
         // Enviar SMS manual o desde contactos
         btnEnviarSMS.setOnClickListener(v -> {
             String[] opciones = {"Ingresar número manualmente", "Seleccionar desde contactos"};
