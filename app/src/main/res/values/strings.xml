@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">app</string>
 
-    <string name="nombre_app">MiApp</string>
-    <string name="login_titulo">Bienvenido</string>
+    <string name="nombre_app">IMX App</string>
+    <string name="login_titulo">Bienvenido a IMX App</string>
     <string name="login_subtitulo">Inicia sesión para continuar</string>
     <string name="email_hint">Correo electrónico</string>
     <string name="password_hint">Contraseña</string>
