@@ -3,8 +3,10 @@ package com.devst.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.util.Patterns;
 
@@ -28,11 +30,24 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this); // Ajuste de diseño edge-to-edge
         setContentView(R.layout.activity_login);
 
+        // Oculta la barra de navegación
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+        );
+
 
         // Asociar variables con elementos del layout
         edtEmail = findViewById(R.id.edtEmail);
         edtPass  = findViewById(R.id.edtPass);
         btnLogin = findViewById(R.id.btnLogin);
+        ImageView imageView = findViewById(R.id.imgMike);
+        imageView.setImageResource(R.drawable.imgmike);
+
+
+
 
         // Configurar listener para botón login
         btnLogin.setOnClickListener(v -> intentoInicioSesion());
