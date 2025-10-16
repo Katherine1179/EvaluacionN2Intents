@@ -50,6 +50,7 @@ public class EvaluacionFragment extends Fragment {
             });
 
     // Lanzador para seleccionar imagen desde galería
+    //Intent implicito: Seleccionar imagen desde galeria para mostrarla en un imageView
     private final ActivityResultLauncher<Intent> seleccionarImagenLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == getActivity().RESULT_OK && result.getData() != null) {
@@ -118,6 +119,7 @@ public class EvaluacionFragment extends Fragment {
             Toast.makeText(getContext(), "No se puede acceder a la cámara", Toast.LENGTH_SHORT).show();
         }
 
+        //Intent implicito Configuracion Wi-Fi
         // Abrir ajustes Wi-Fi
         btnWifi.setOnClickListener(v -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)));
 
@@ -128,6 +130,7 @@ public class EvaluacionFragment extends Fragment {
             seleccionarImagenLauncher.launch(Intent.createChooser(intent, "Selecciona una imagen"));
         });
 
+        //Intent implicito Enviar SMS
         // Enviar SMS manual o desde contactos
         btnEnviarSMS.setOnClickListener(v -> {
             String[] opciones = {"Ingresar número manualmente", "Seleccionar desde contactos"};
@@ -157,6 +160,8 @@ public class EvaluacionFragment extends Fragment {
                     }).show();
         });
 
+
+        // Intent implicito flash: Permisos y llama a alternarLuz()
         // Activar/desactivar linterna
         btnLinterna.setOnClickListener(v -> {
             if (camaraID == null) {
@@ -168,6 +173,7 @@ public class EvaluacionFragment extends Fragment {
             else permisoCamaraLauncher.launch(Manifest.permission.CAMERA);
         });
 
+        //Intent Explicito: Elegir camara frontal o trasera
         // Abrir cámara frontal o trasera
         btnCamaraFunciones.setOnClickListener(v -> {
             String[] opciones = {"Cámara Frontal", "Cámara Trasera"};
@@ -183,6 +189,7 @@ public class EvaluacionFragment extends Fragment {
                             view.animate().alpha(0.5f).setDuration(200).withEndAction(() -> {
                                 if (getContext() != null) {
                                     requireActivity().startActivity(intentFinal);
+                                    //Intent explicito: Transicion entre activities
                                     requireActivity().overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
                                 }
                                 // Restaurar alpha al volver
@@ -196,6 +203,7 @@ public class EvaluacionFragment extends Fragment {
 
 
 
+        //Intent implicito: Lista de contactos
         // Abrir aplicación de contactos
         btnAbrirContactos.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI)));
 
