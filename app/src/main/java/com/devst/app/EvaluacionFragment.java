@@ -181,25 +181,23 @@ public class EvaluacionFragment extends Fragment {
                     .setTitle("Selecciona una cámara")
                     .setItems(opciones, (dialog, which) -> {
                         Intent selectedIntent = null;
-                        if (which == 0) selectedIntent = new Intent(getContext(), CamaraFrontalActivity.class);
-                        else if (which == 1) selectedIntent = new Intent(getContext(), CamaraActivity.class);
+                        if (which == 0)
+                            selectedIntent = new Intent(getContext(), CamaraFrontalActivity.class);
+                        else if (which == 1)
+                            selectedIntent = new Intent(getContext(), CamaraActivity.class);
 
-                        if (selectedIntent != null) {
-                            final Intent intentFinal = selectedIntent; // <-- Hacerlo final
-                            view.animate().alpha(0.5f).setDuration(200).withEndAction(() -> {
-                                if (getContext() != null) {
-                                    requireActivity().startActivity(intentFinal);
-                                    //Intent explicito: Transicion entre activities
-                                    requireActivity().overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
-                                }
-                                // Restaurar alpha al volver
-                                view.animate().alpha(1f).setDuration(200).start();
-                            }).start();
+                        if (selectedIntent != null && getContext() != null) {
+                            requireActivity().startActivity(selectedIntent);
+                            // Efecto de transición entre Activities
+                            requireActivity().overridePendingTransition(
+                                    R.anim.fade_in_zoom, R.anim.fade_out_zoom
+                            );
                         }
                     })
                     .setCancelable(true)
                     .show();
         });
+
 
 
 
